@@ -7,6 +7,18 @@ Console program to backup and restore SimpleDB domains. With this program, you c
 * Export a SimpleDB domain into a CSV file
 * Import a previously exported CSV file into a SimpleDB domain
 
+## Building
+
+### Prerequisites
+* JDK 1.8
+* Maven 3.2.1+
+
+Simply run the Maven goal to build a single runnable jar:
+```
+mvn clean install
+```
+The jar will be under the `target` subdirectory (e.g. `target/simpledb-bkrs-1.0.0-jar-with-dependencies.jar`)
+
 ## Usage
 
 Running just the program without parameters will output the usage message:

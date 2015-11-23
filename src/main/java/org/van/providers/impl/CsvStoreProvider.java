@@ -13,6 +13,8 @@ import java.nio.charset.Charset;
 import java.util.Objects;
 
 /**
+ * Implementation of {@link ItemStoreProvider} backed by a CSV file.
+ *
  * Created by vly on 11/15/2015.
  */
 public class CsvStoreProvider extends ItemStoreProvider {

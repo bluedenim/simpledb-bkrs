@@ -20,6 +20,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
 /**
+ * Implementation of {@link ItemSourceProvider} backed by a CSV file.
+ *
  * Created by vly on 11/15/2015.
  */
 public class CsvSourceProvider extends ItemSourceProvider {

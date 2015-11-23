@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
+ * Implementation of {@link ItemStoreProvider} backed by a SimpleDB domain.
+ *
  * Created by vly on 11/15/2015.
  */
 public class SimpleDbStoreProvider extends ItemStoreProvider {

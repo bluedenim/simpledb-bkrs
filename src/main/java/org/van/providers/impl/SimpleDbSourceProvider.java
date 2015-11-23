@@ -16,6 +16,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 
 /**
+ * Implementation of {@link ItemSourceProvider} backed by a SimpleDB domain.
+ *
  * Created by vly on 11/15/2015.
  */
 public class SimpleDbSourceProvider extends ItemSourceProvider {

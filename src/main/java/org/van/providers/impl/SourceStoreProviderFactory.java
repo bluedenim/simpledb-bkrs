@@ -22,7 +22,7 @@ import java.util.Optional;
  *
  * Created by vly on 11/22/2015.
  */
-public class SourceProviderFactory {
+public class SourceStoreProviderFactory {
 
     public static final String SCHEME_FILE = "file";
     public static final String SCHEME_SIMPLEDB = "sdb";
@@ -39,7 +39,7 @@ public class SourceProviderFactory {
      */
     public static ItemSourceProvider sourceProviderFor(final URI uri) throws IllegalArgumentException, IOException {
         Objects.requireNonNull(uri);
-        ItemSourceProvider provider = null;
+        ItemSourceProvider provider;
         String scheme = uri.getScheme();
         switch(scheme) {
             case SCHEME_FILE:
@@ -68,7 +68,7 @@ public class SourceProviderFactory {
      */
     public static ItemStoreProvider storeProviderFor(final URI uri) throws FileNotFoundException {
         Objects.requireNonNull(uri);
-        ItemStoreProvider provider = null;
+        ItemStoreProvider provider;
         String scheme = uri.getScheme();
         switch(scheme) {
             case SCHEME_FILE:

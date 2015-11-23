@@ -1,16 +1,12 @@
 package org.van;
 
 import org.apache.commons.cli.*;
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.van.providers.ItemStoreProvider;
 import org.van.providers.impl.*;
 import org.van.providers.ItemSourceProvider;
 
-import java.io.*;
 import java.net.URI;
-import java.net.URL;
-import java.util.Optional;
 
 
 public class SimpleDbBackupApplication {
@@ -45,27 +41,20 @@ public class SimpleDbBackupApplication {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("java ...", opts);
         } catch (Exception ex) {
-            logger.error(String.format("Error encountered. Check: 1) URIs' format (run without parameters to see help), 2) SimpleDB accessibility, and 3) AWS configuration.", ex));
+            logger.error("Error encountered. Check: 1) URIs' format (run without parameters to see help), 2) SimpleDB accessibility, and 3) AWS configuration.", ex);
             System.exit(1);
         }
     }
 
     public void run(URI sourceUri, URI destinationUri) throws Exception {
-        File f = File.createTempFile("simpledb-bkrs", ".csv");
-        try {
-            ItemSourceProvider source = SourceProviderFactory.sourceProviderFor(sourceUri);
-            ItemStoreProvider store = SourceProviderFactory.storeProviderFor(destinationUri);
-
-            try (ItemSourceProvider sourceProvider = source.initialize();
-                 ItemStoreProvider storeProvider = store.initialize()
-            ) {
-                logger.info(String.format("Transferring content from %s to %s...",
-                    sourceUri, destinationUri));
-                sourceProvider.iterateItems(storeProvider::storeItem);
-                logger.info("Transfer complete");
-            }
-        } finally {
-            FileUtils.deleteQuietly(f);
+        try (ItemSourceProvider source = SourceStoreProviderFactory.sourceProviderFor(sourceUri);
+             ItemStoreProvider store = SourceStoreProviderFactory.storeProviderFor(destinationUri);
+             ItemSourceProvider sourceProvider = source.initialize();
+             ItemStoreProvider storeProvider = store.initialize()) {
+            logger.info(String.format("Transferring content from %s to %s...",
+                sourceUri, destinationUri));
+            sourceProvider.iterateItems(storeProvider::storeItem);
+            logger.info("Transfer complete");
         }
     }
 }

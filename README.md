@@ -37,20 +37,20 @@ usage: java ...
 ### Examples
 
 #### Back up a domain
-`java -tar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s sdb:///MyDomain -d sdb:///MyBackup`
+`java -jar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s sdb:///MyDomain -d sdb:///MyBackup`
 
 #### Export domain to a CSV
 ```
-java -tar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s sdb:///MyDomain -d file:///home/van/mydomain.csv
+java -jar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s sdb:///MyDomain -d file:///home/van/mydomain.csv
 ```
 or for **Windows**:
 ```
-java -tar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s sdb:///MyDomain -d file:///c:/temp/van/mydomain.csv
+java -jar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s sdb:///MyDomain -d file:///c:/temp/van/mydomain.csv
 ```
 
 #### Import a CSV into a domain
 ```
-java -tar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s file:///home/van/mydomain.csv -d sdb:///MyBackupDomain
+java -jar simpledb-bkrs-1.0.0-jar-with-dependencies.jar -s file:///home/van/mydomain.csv -d sdb:///MyBackupDomain
 ```
 
 ## Code

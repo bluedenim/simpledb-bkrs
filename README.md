@@ -7,6 +7,17 @@ Console program to backup and restore SimpleDB domains. With this program, you c
 * Export a SimpleDB domain into a CSV file
 * Import a previously exported CSV file into a SimpleDB domain
 
+## Building
+
+You will need:
+
+* Java 1.8
+* Maven (tested with 3.3.1)
+
+```
+mvn clean install
+```
+
 ## Usage
 
 Running just the program without parameters will output the usage message:

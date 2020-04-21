@@ -1,5 +1,7 @@
 # simpledb-bkrs
-##SimpleDB backup and restore
+## SimpleDB backup and restore
+
+![Alt UI Preview](http://therealvan.com/image/projects/simpledb_bkrs.png)
 
 Console program to backup and restore SimpleDB domains. With this program, you can:
 

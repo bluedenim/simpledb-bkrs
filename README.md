@@ -1,4 +1,7 @@
 # simpledb-bkrs
+
+**NOTE:** Looks like AWS is finally giving up on Simple DB (see [this comment](https://github.com/aws/aws-sdk-js-v3/issues/1854#issuecomment-754142929)). So ... this repo is pretty much dead as well.
+
 ## SimpleDB backup and restore
 
 ![Alt UI Preview](http://therealvan.com/image/projects/simpledb_bkrs.png)
